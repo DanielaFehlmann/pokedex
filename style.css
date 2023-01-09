@@ -1,0 +1,270 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  position: relative;
+  
+}
+/* alle Pokemons - Pokedex nicht geöffnet */
+.pokedexUnopened {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 25px;
+}
+.header h1 {
+  cursor: pointer;
+}
+.header h1 img{
+  height: 30px;
+}
+.header input {
+  font-size: 20px;
+  border: none;
+}
+.headerHeart {
+  height: 40px;
+  width: 247px;
+  cursor: pointer;
+  transition: filter 125ms ease-in-out;
+}
+.headerHeart:hover {
+  filter: invert(0.3);
+}
+.header input:focus {
+  outline: none;
+  
+}
+#allPokemons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.onePokemon {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+  width: 350px;
+  margin: 10px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  background-image: url('img/bg2.png');
+  background-repeat: no-repeat;
+  background-position: -220px -160px;
+  background-size: 100%;
+ 
+}
+.onePokemon h2{
+  margin-left: 20px;
+  margin-top: 35px;
+}
+.under {
+  display: inline-block;
+  flex-direction: column;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.right span {
+  margin-right: 50px;
+  margin-top: 15px;
+  font-size: 24px;
+  color:rgba(0, 0, 0, 0.24);
+  font-weight: bold;
+}
+.onePokemon img {
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  background-image: url('img/pokeball5.png');
+  background-size: 100%;
+  
+}
+
+
+/* opened Pokedex */
+#pokedex-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(197, 197, 197, 0.733);
+  z-index: 999;
+}
+#pokedex {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  width: 400px;
+  border-radius: 40px;
+}
+
+
+/* oberer Teil Pokedex geöffnet*/
+.above {
+  border-radius: 40px 40px 0 0;
+  color: white;
+  height: 350px;
+  background-image: url('img/bg2.png');
+  background-repeat: no-repeat;
+  background-position: -135px -180px;
+  background-size: 100%;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 25px 25px 25px;
+  cursor: pointer;
+}
+.icons img{
+  height: 20px;
+  width: 20px;
+  filter: invert(1);
+}
+#pokemonName {
+  margin-left: 25px;
+}
+#pokemonNumber {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  margin-right: 25px;
+  font-size: 18px;
+  height: 18px;
+}
+#pokemonTypes {
+  display: flex;
+}
+.pokemonType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  padding: 5px 15px 5px 15px;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.233);
+  object-fit: contain;
+}
+#pokemonImage {
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 190px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  background-image: url('img/pokeball5.png');
+  background-size: 100%;
+  
+}
+/* unterer Teil Pokedex geöffnet */
+.below {
+  height: 450px;
+  background-color: white;
+  border-radius: 40px;
+}
+.below nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 25px 20px 25px;
+  
+}
+.below button {
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(46, 46, 46);
+  border: none;
+  cursor: pointer;
+}
+.buttonSelected {
+  font-weight: bold;
+}
+#selectionBar {
+  position: relative;
+  height: 5px;
+  width: 350px;
+  margin-left: 25px;
+  margin-bottom: 20px;
+  background-color:  rgba(128, 128, 128, 0.418);
+  border-radius: 2px;
+}
+#selectionBarFilled {
+  position: absolute;
+  height: 5px;
+  background-color: rgba(27, 27, 27, 0.425);
+  width: 50px;
+  border-radius: 2px;
+}
+#infos {
+  position: relative;
+  height: 300px;
+  overflow: auto;
+}
+table {
+  margin: 0 25px 25px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(46, 46, 46);
+}
+table tr td:nth-child(2) {
+  padding-left: 40px;
+}
+table tr td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.tableHeadings {
+  color: rgb(159,161,165);
+}
+#about {
+  position: absolute;
+}
+#basestats {
+  position: absolute;
+}
+.progressBar {
+  position: relative;
+  height: 5px;
+  width: 154.828px;
+  background-color: rgba(128, 128, 128, 0.418);
+  margin-left: 20px;
+  border-radius: 2px;
+}
+.progressBarFilled {
+  position: absolute;
+  height: 5px;
+  background-color: rgb(249,94,94);
+  border-radius: 2px;
+}
+.moves {
+  position: absolute;
+  margin: 0 10px 10px 10px;
+  font-size: 12px;
+  
+  
+}
+.moves li {
+  margin-right: 5px;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+
+.d-none {
+  display: none !important;
+}
