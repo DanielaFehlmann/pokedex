@@ -6,41 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <link rel="icon" type="image/x-icon" href="img/pokeball.png">
+    <script src="pokOpen.js"></script>
+    <script src="pokOpenInfo.js"></script>
+    <script src="localStorage.js"></script>
+    <script src="pokedex.js"></script>
+    <script src="like.js"></script>
+    <script src="search.js"></script>
+    <script src="bla.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/pokeball.png" />
+    <link rel="stylesheet" href="fonts.css">
   </head>
 
-  <body onload="loadPokemon()" id="body">
-    
-
-
-
-    <!-- geöffnetes Pokemon -->
+  <body onload="loadPokemon(), init()" id="body" onclick="resetValue()">
+    <!-- Pokemon geöffnet -->
     <div id="pokedex-bg" class="d-none" onclick="closePokemon()">
       <div id="pokedex" onclick="doNotClosePokemon(event)">
-        
-        <div class="above">
-          <div class="icons" id="icons">
-            
-            
-          </div>
+        <div class="above"> <!-- Infos oben -->
+          <div class="icons" id="icons"></div>
           <h1 id="pokemonName"></h1>
           <div id="pokemonNumber"></div>
           <div id="pokemonTypes"></div>
-          <img id="pokemonImage" />
         </div>
-
-        <div class="below">
+        <div class="below"> <!-- Infos unten -->
+          <div class="navBody">
+            <img id="pokemonImage" />
           <nav>
             <button id="buttonAbout" onclick="openAbout()">About</button>
             <button id="buttonStats" onclick="openStats()">Base Stats</button>
             <button id="buttonMoves" onclick="openMoves()">Moves</button>
           </nav>
+        </div>
+          <div class="selectionBarBody">
           <div id="selectionBar">
-            <div id="selectionBarFilled">
-
-            </div>
+            <div id="selectionBarFilled"></div>
           </div>
+        </div>
           <div id="infos">
             <div id="about">
               <table>
@@ -63,30 +63,34 @@
               </table>
             </div>
             <div id="baseStats" class="d-none">
-              <table id="stats">
-              </table>
+              <table id="stats"></table>
             </div>
             <div id="moves" class="d-none">
-              <ul id="move">
-              </ul>
+              <ul id="move"></ul>
             </div>
           </div>
-        </div> <!-- class below / -->
-      </div> <!-- class pokedex / -->
-    </div> <!-- class pokedex-bg / -->
-    <!-- geöffnetes Pokemon / -->
-
-
-  <!-- Pokedex nicht geöffnet - alle Pokemons -->
-  <div class="pokedexUnopened">
-    <div class="header">
-      <input placeholder="Suche..." id="search" onkeydown="filterNames()">
-      <h1 onclick="loadPokemon()">P<img src="img/pokeball.png">kedex</h1>
-      <img src="img/heart_filled.svg" class="headerHeart" onclick="showFavourites()">
+        </div>
+      </div>
     </div>
-    <div id="allPokemons">
+    
 
+    <!-- Pokedex -->
+    <div class="pokedexUnopened">
+      <!-- header -->
+      <div class="header" id="header">
+        <input placeholder="Suche..." id="search" onkeyup="searchPokemon()" onclick="backToPokedex()"/>
+        <h1 onclick="backToPokedex()">P<img src="img/pokeball.png" />kedex</h1>
+        <div class="headerRight">
+          <img src="img/heart_filled.svg" class="headerHeart" onclick="showFavourites()"/>
+          <img src="img/refresh.svg" id="refresh" class="headerRefresh d-none" onclick="showFavourites()"/>
+        </div>
+      </div>
+      <!-- Pokedex -->
+      <div id="allPokemons" class="allPokemons"></div>
+      <!-- buttons unten -->
+      <div class="button">
+        <button id="buttonLoadMore" onclick="loadPokemon()">load more</button>
+      </div>
     </div>
-  </div>
   </body>
 </html>
