@@ -8,7 +8,6 @@ body {
   position: relative;
 }
 
-/* header */
 .header {
   display: flex;
   align-items: center;
@@ -56,32 +55,34 @@ body {
   transition: filter 125ms ease-in-out;
   right: 0;
   bottom: calc(50% - 20px);
+  transition: all 125ms ease-in-out;
 }
 
 .headerHeart:hover {
-  filter: invert(0.3);
+  filter: brightness(1.05);
 }
 
 .headerRefresh {
   height: 18px;
   position: absolute;
-  filter: invert(0.6);
+  filter: invert(1);
   cursor: pointer;
   right: 10px;
   bottom: calc(50% - 9px);
 }
 
-/* alle Pokemons - Pokedex nicht geöffnet */
 .pokedexUnopened {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .allPokemons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .onePokemon {
   position: relative;
   display: flex;
@@ -129,8 +130,9 @@ body {
   height: 150px;
   object-fit: cover;
   background-image: url('img/pokeball5.png');
-  background-size: 100%;
+  background-size: 100% !important;
 }
+
 .pokemonType {
   display: flex;
   justify-content: center;
@@ -143,7 +145,6 @@ body {
   object-fit: contain;
 }
 
-/* button ganz unten */
 .button {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -167,8 +168,6 @@ body {
   opacity: 0.8;
 }
 
-
-/* opened Pokedex */
 #pokedex-bg {
   display: flex;
   justify-content: center;
@@ -192,8 +191,15 @@ body {
   border-radius: 40px;
 }
 
+.pokedexImage {
+  transition: all 0.5s ease-in-out;
+}
 
-/* oberer Teil Pokedex geöffnet*/
+.pokedexImage:hover {
+  transform: scale(1.15);
+  filter: brightness(1.15);
+}
+
 .above {
   border-radius: 40px 40px 0 0;
   color: white;
@@ -233,6 +239,7 @@ body {
 #pokemonTypes {
   display: flex;
 }
+
 .pokemonTypeOpened {
   display: flex;
   justify-content: center;
@@ -254,21 +261,47 @@ body {
   object-fit: cover;
   background-image: url('img/pokeball5.png');
   background-size: 100%;
-
+  background-repeat: no-repeat;
 }
 
+#pokemonImage:hover {
+  animation: turn 0.8s ease-in-out;
+}
 
-/* unterer Teil Pokedex geöffnet */
+@keyframes turn {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  16% {
+    transform: rotate(-2deg)
+  }
+
+  48% {
+    transform: rotate(2deg)
+  }
+
+  80% {
+    transform: rotate(-2deg)
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .below {
   height: 450px;
   background-color: white;
   border-radius: 40px;
 }
+
 .navBody {
   position: relative;
   display: flex;
   justify-content: center;
 }
+
 .below nav {
   display: flex;
   justify-content: space-between;
@@ -287,10 +320,12 @@ body {
 .buttonSelected {
   font-weight: bold;
 }
+
 .selectionBarBody {
   display: flex;
   justify-content: center;
 }
+
 #selectionBar {
   position: relative;
   height: 5px;
@@ -356,6 +391,13 @@ table tr td {
   height: 5px;
   background-color: rgb(194, 46, 40);
   border-radius: 2px;
+  animation: width 0.6s ease-in-out;
+}
+
+@keyframes width {
+  from {
+    width: 0;
+  }
 }
 
 .moves {
@@ -370,11 +412,9 @@ table tr td {
   display: inline-block;
 }
 
-
 .d-none {
   display: none !important;
 }
-
 
 @media (max-width: 760px) {
   .onePokemon {
@@ -383,20 +423,24 @@ table tr td {
     margin: 7px;
     background-position: -120px -120px;
   }
+
   .onePokemon h2 {
     margin-left: 15px;
     margin-top: 15px;
     font-size: 20px;
   }
+
   .right span {
     margin-right: 20px;
     margin-top: 5px;
     font-size: 22px;
   }
+
   .onePokemon img {
     width: 80px;
     height: 80px;
   }
+
   .pokemonType {
     margin-left: 15px;
     margin-bottom: 10px;
@@ -404,21 +448,26 @@ table tr td {
     border-radius: 11.5px;
     font-size: 14px;
   }
+
   .header {
-    height: 100px; 
+    height: 100px;
   }
+
   .header h1 {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 35px;
   }
+
   .header h1 img {
     height: 22px;
   }
+
   .headerRight {
     height: 100px;
   }
 }
+
 @media (max-width: 500px) {
   .onePokemon {
     height: 85.71px;
@@ -427,20 +476,24 @@ table tr td {
     background-position: -80px -80px;
     border-radius: 15px;
   }
+
   .onePokemon h2 {
     margin-left: 7px;
     margin-top: 10px;
     margin-bottom: 5px;
     font-size: 14px;
   }
+
   .right span {
     margin-right: 15px;
     font-size: 14px;
   }
+
   .onePokemon img {
     width: 50px;
     height: 50px;
   }
+
   .pokemonType {
     margin-left: 10px;
     margin-bottom: 5px;
@@ -448,73 +501,90 @@ table tr td {
     border-radius: 7.5px;
     font-size: 10px;
   }
+
   .header {
     height: 60px;
   }
+
   .header input {
     margin-left: 10px;
     font-size: 14px;
     width: 46px;
   }
+
   .header h1 {
     font-size: 25px;
   }
+
   .header h1 img {
     height: 16px;
   }
+
   .headerRight {
     height: 60px;
     margin-right: 10px;
     width: 50px;
   }
+
   .headerHeart {
     height: 30px;
     top: calc(50% - 15px);
   }
+
   .headerRefresh {
     height: 15px;
     right: 7px;
     top: 22px;
   }
+
   .buttons {
     margin-top: 15px;
     margin-bottom: 15px;
     width: 220px;
   }
-  .buttons button{
+
+  .buttons button {
     height: 30px;
     font-size: 16px;
   }
 }
+
 @media (max-width: 414px) {
   #pokedex {
     height: 100vH;
     width: 100%;
     border-radius: 0;
   }
+
   .above {
     border-radius: 0;
   }
+
   .below {
     border-radius: 0;
   }
+
   .icons {
     margin-top: 40px;
     margin-bottom: 10px;
   }
+
   .above h1 {
     margin-top: 0;
     margin-bottom: 0;
   }
+
   #pokemonImage {
     height: 120px;
     width: 120px;
     left: calc(50% - 60px);
     top: -90%;
   }
+
   table tr td:nth-child(2) {
     padding-left: 10px;
   }
+
   table {
     margin-left: 8px;
     margin-right: 8px;
@@ -530,20 +600,24 @@ table tr td {
     background-position: -50px -50px;
     border-radius: 10px;
   }
+
   .onePokemon h2 {
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 9px;
   }
+
   .right span {
     margin-right: 5px;
     font-size: 9px;
   }
+
   .onePokemon img {
     width: 30px;
     height: 30px;
   }
+
   .pokemonType {
     margin-left: 5px;
     margin-bottom: 5px;
@@ -551,50 +625,61 @@ table tr td {
     border-radius: 7.5px;
     font-size: 7px;
   }
+
   .header {
     height: 60px;
   }
+
   .header input {
     margin-left: 10px;
     font-size: 14px;
     width: 50px;
   }
+
   .header h1 {
     font-size: 20px;
   }
+
   .header h1 img {
     height: 12px;
   }
+
   .headerRight {
     height: 60px;
     margin-right: 10px;
     width: 50px;
   }
+
   .headerHeart {
     height: 24px;
     top: calc(50% - 12px);
   }
+
   .headerRefresh {
     height: 11px;
     right: 6px;
     top: 24px;
   }
+
   .buttons {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 160px;
   }
-  .buttons button{
+
+  .buttons button {
     height: 20px;
     padding: 2px 7px 2px 7px;
     font-size: 12px;
   }
 }
+
 @media (max-width: 300px) {
   .tableHeadings {
     font-size: 12px;
   }
-table tr td:nth-child(2) {
-  padding-left: 5px;
+
+  table tr td:nth-child(2) {
+    padding-left: 5px;
   }
 }

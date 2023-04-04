@@ -78,7 +78,6 @@ function numberCorrection (pokemon){
  * @param {String} nameUpperCase - name of pokemon changed, that the name begins with an uppercase letter
  * @param {number} number - number of the pokemon
  * @param {json} pokemon - contains all informations about the pokemon
- * @returns 
  */
 function showPokedex(i,id1,id2,nameUpperCase,number,pokemon) {
   return `
@@ -89,7 +88,7 @@ function showPokedex(i,id1,id2,nameUpperCase,number,pokemon) {
     </div>
     <div class="right">
       <span>${number}</span>
-      <img src="${pokemon['sprites']['other']['official-artwork']['front_default']}">
+      <img src="${pokemon['sprites']['other']['official-artwork']['front_default']}" class="pokedexImage">
     </div>
   </div>
   `;

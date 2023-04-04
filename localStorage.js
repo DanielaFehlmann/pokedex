@@ -6,6 +6,7 @@ function save () {
   localStorage.setItem('hearts', heartsAsText);
 }
 
+
 /**
  * function to load the likes
  */

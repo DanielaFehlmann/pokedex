@@ -12,24 +12,23 @@
     <script src="pokedex.js"></script>
     <script src="like.js"></script>
     <script src="search.js"></script>
-    <script src="bla.js"></script>
     <link rel="icon" type="image/x-icon" href="img/pokeball.png" />
     <link rel="stylesheet" href="fonts.css">
   </head>
 
-  <body onload="loadPokemon(), init()" id="body" onclick="resetValue()">
-    <!-- Pokemon geöffnet -->
+  <body onload="loadPokemon()" id="body" onclick="resetValue()">
+
     <div id="pokedex-bg" class="d-none" onclick="closePokemon()">
       <div id="pokedex" onclick="doNotClosePokemon(event)">
-        <div class="above"> <!-- Infos oben -->
+        <div class="above">
           <div class="icons" id="icons"></div>
           <h1 id="pokemonName"></h1>
           <div id="pokemonNumber"></div>
           <div id="pokemonTypes"></div>
         </div>
-        <div class="below"> <!-- Infos unten -->
+        <div class="below">
           <div class="navBody">
-            <img id="pokemonImage" />
+            <img id="pokemonImage">
           <nav>
             <button id="buttonAbout" onclick="openAbout()">About</button>
             <button id="buttonStats" onclick="openStats()">Base Stats</button>
@@ -73,21 +72,19 @@
       </div>
     </div>
     
-
-    <!-- Pokedex -->
     <div class="pokedexUnopened">
-      <!-- header -->
+
       <div class="header" id="header">
         <input placeholder="Suche..." id="search" onkeyup="searchPokemon()" onclick="backToPokedex()"/>
         <h1 onclick="backToPokedex()">P<img src="img/pokeball.png" />kedex</h1>
         <div class="headerRight">
-          <img src="img/heart_filled.svg" class="headerHeart" onclick="showFavourites()"/>
+          <img src="img/heart-red.png" class="headerHeart" onclick="showFavourites()"/>
           <img src="img/refresh.svg" id="refresh" class="headerRefresh d-none" onclick="showFavourites()"/>
         </div>
       </div>
-      <!-- Pokedex -->
+
       <div id="allPokemons" class="allPokemons"></div>
-      <!-- buttons unten -->
+
       <div class="button">
         <button id="buttonLoadMore" onclick="loadPokemon()">load more</button>
       </div>

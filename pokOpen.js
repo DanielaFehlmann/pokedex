@@ -97,6 +97,7 @@ function changeBgColorOpened (firstType) {
   changeBgColor(firstType,onePokemon);
 }
 
+
 /**
  * function to close the opened pokemon
  */
@@ -105,11 +106,11 @@ function closePokemon () {
   document.getElementById('body').style.overflow='visible';
 }
 
+
 /**
  * function to prevent to close the opened pokemon
  */
 function doNotClosePokemon (event) {
   event.stopPropagation();
 }
-
 

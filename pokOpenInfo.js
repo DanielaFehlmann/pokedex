@@ -2,12 +2,12 @@
  * function to open the infos by clicking on the "About"-button
  */
 function openAbout() {
-  document.getElementById('about').classList.remove('d-none');
   document.getElementById('baseStats').classList.add('d-none');
   document.getElementById('moves').classList.add('d-none');
   document.getElementById('buttonAbout').classList.add('buttonSelected');
   document.getElementById('buttonStats').classList.remove('buttonSelected');
   document.getElementById('buttonMoves').classList.remove('buttonSelected');
+  document.getElementById('about').classList.remove('d-none');
   document.getElementById('selectionBarFilled').style.width='50px';
   document.getElementById('selectionBarFilled').style.left='0';
 }
