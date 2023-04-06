@@ -240,6 +240,24 @@ body {
   display: flex;
 }
 
+.arrowLeft {
+  position: absolute;
+  top: 30%;
+  left: 25px;
+  height: 30px;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.arrowRight{
+  position: absolute;
+  top: 30%;
+  right: 25px;
+  height: 30px;
+  filter: invert(1);
+  cursor: pointer;
+}
+
 .pokemonTypeOpened {
   display: flex;
   justify-content: center;

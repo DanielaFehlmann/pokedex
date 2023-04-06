@@ -1,5 +1,5 @@
 let heart;
-
+let currentPokemon;
 
 /**
  * function to open the pokemon by clicking on it
@@ -10,6 +10,8 @@ function openPokemon (i) {
   document.getElementById('pokedex-bg').classList.remove('d-none');
   document.getElementById('body').style.overflow='hidden';
   renderPokemonInfo(i);
+  currentPokemon = i;
+  document.addEventListener('keyup', addKeyListener);
 }
 
 
@@ -102,6 +104,7 @@ function changeBgColorOpened (firstType) {
  * function to close the opened pokemon
  */
 function closePokemon () {
+  document.removeEventListener('keyup', addKeyListener);
   document.getElementById('pokedex-bg').classList.add('d-none');
   document.getElementById('body').style.overflow='visible';
 }
@@ -114,3 +117,30 @@ function doNotClosePokemon (event) {
   event.stopPropagation();
 }
 
+/**
+ * function to go to the next or previous pokemon by arrow left and arrow right
+ */
+function addKeyListener(event) {
+  if (event.code === "ArrowLeft") {
+    previousPokemon();
+  }
+  else if (event.code === "ArrowRight") {
+    nextPokemon();
+  }
+}
+
+
+function nextPokemon() {
+  if (currentPokemon < limit-31) {
+    closePokemon();
+    openPokemon(currentPokemon + 1);
+  }
+}
+
+
+function previousPokemon() {
+  if (currentPokemon > 0) {
+    closePokemon();
+    openPokemon(currentPokemon - 1);
+  }
+}
