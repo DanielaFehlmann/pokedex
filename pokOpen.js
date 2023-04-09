@@ -22,7 +22,7 @@ function openPokemon (i) {
  */
 function renderPokemonInfo(i) {
   let pokemon = allPokemons[i];
-  let nameUpperCase = pokemon['name'].charAt(0).toUpperCase() + allPokemons[i]['name'].slice(1); //1
+  let nameUpperCase = pokemon['name'].charAt(0).toUpperCase() + allPokemons[i]['name'].slice(1);
   let types = pokemon['types'];
   let firstType = types[0]['type']['name'];
   numberCorrection(pokemon);
@@ -117,6 +117,7 @@ function doNotClosePokemon (event) {
   event.stopPropagation();
 }
 
+
 /**
  * function to go to the next or previous pokemon by arrow left and arrow right
  */
@@ -130,6 +131,9 @@ function addKeyListener(event) {
 }
 
 
+/**
+ * function to go to the next pokemon
+ */
 function nextPokemon() {
   if (currentPokemon < limit-31) {
     closePokemon();
@@ -138,6 +142,9 @@ function nextPokemon() {
 }
 
 
+/**
+ * function to go to the previous pokemon
+ */
 function previousPokemon() {
   if (currentPokemon > 0) {
     closePokemon();

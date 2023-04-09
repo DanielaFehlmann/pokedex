@@ -189,6 +189,16 @@ body {
   height: 800px;
   width: 400px;
   border-radius: 40px;
+  animation: 0.3s pokemon ease-in-out;
+}
+
+@keyframes pokemon {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .pokedexImage {
@@ -255,7 +265,7 @@ body {
   right: 25px;
   height: 30px;
   filter: invert(1);
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .pokemonTypeOpened {
@@ -280,6 +290,7 @@ body {
   background-image: url('img/pokeball5.png');
   background-size: 100%;
   background-repeat: no-repeat;
+  animation: test 1s ease-in-out;
 }
 
 #pokemonImage:hover {
