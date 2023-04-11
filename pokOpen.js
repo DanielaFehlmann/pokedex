@@ -135,7 +135,7 @@ function addKeyListener(event) {
  * function to go to the next pokemon
  */
 function nextPokemon() {
-  if (currentPokemon < limit-31) {
+  if (currentPokemon < limit-21) {
     closePokemon();
     openPokemon(currentPokemon + 1);
   }
