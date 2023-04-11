@@ -8,6 +8,34 @@ body {
   position: relative;
 }
 
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.loadingScreen img {
+  height: 400px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -446,6 +474,10 @@ table tr td {
 }
 
 @media (max-width: 760px) {
+  .loadingScreen img{
+    height: 300px;
+  }
+
   .onePokemon {
     height: 130px;
     width: 227.5px;
@@ -498,6 +530,10 @@ table tr td {
 }
 
 @media (max-width: 500px) {
+  .loadingScreen img{
+    height: 200px;
+  }
+
   .onePokemon {
     height: 85.71px;
     width: 150px;
@@ -579,6 +615,10 @@ table tr td {
 }
 
 @media (max-width: 414px) {
+  .loadingScreen img{
+    height: 200px;
+  }
+
   #pokedex {
     height: 100vH;
     width: 100%;
@@ -622,6 +662,10 @@ table tr td {
 
 
 @media (max-width: 340px) {
+  .loadingScreen img{
+    height: 150px;
+  }
+
   .onePokemon {
     height: 57.71px;
     width: 100px;
@@ -704,6 +748,10 @@ table tr td {
 }
 
 @media (max-width: 300px) {
+  .loadingScreen img{
+    height: 120px;
+  }
+
   .tableHeadings {
     font-size: 12px;
   }

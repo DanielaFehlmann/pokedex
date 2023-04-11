@@ -1,15 +1,16 @@
 let movesSorted = [];
 let allPokemons=[];
 let start = 0;
-let limit = 30;
+let limit = 20;
 let number;
 let hearts = [];
 
 
 /**
- * function to load 30 pokemons
+ * function to load 20 pokemons
  */
 async function loadPokemon() {
+  document.getElementById('loadingScreen').classList.remove('d-none');
   dNone();
   load();
   for (let i = start; i < limit; i++) {
@@ -19,8 +20,9 @@ async function loadPokemon() {
     let pokemon = allPokemons[i];
     renderAllPokemons(pokemon,i);
   }
-  start += 30;
-  limit += 30;
+  document.getElementById('loadingScreen').classList.add('d-none');
+  start += 20;
+  limit += 20;
 }
 
 
