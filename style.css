@@ -49,7 +49,7 @@ body {
 }
 
 .header input {
-  font-size: 20px;
+  font-size: 18px;
   border: none;
   margin-left: 60px;
   width: 96px;
@@ -57,6 +57,26 @@ body {
 
 .header input:focus {
   outline: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+#searchFailed {
+  text-align: center;
+  margin: 10px 40px;
+}
+
+.deleteSearch {
+  height: 18px;
+  cursor: pointer;
+  filter: invert(0.4);
+}
+
+.deleteSearch:hover {
+  filter: invert(0.2);
 }
 
 .header h1 {
@@ -86,17 +106,27 @@ body {
   transition: all 125ms ease-in-out;
 }
 
+.headerHeart:hover ~ .tooltip{
+  visibility: visible !important;
+  opacity: 1;
+}
+
 .headerHeart:hover {
   filter: brightness(1.05);
 }
 
-.headerRefresh {
-  height: 18px;
+.tooltip {
   position: absolute;
-  filter: invert(1);
-  cursor: pointer;
-  right: 10px;
-  bottom: calc(50% - 9px);
+  right: -26px;
+  top: 10px;
+  visibility: hidden;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  background-color: rgba(56, 56, 56, 0.432);
+  padding: 5px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
 }
 
 .pokedexUnopened {
@@ -473,290 +503,6 @@ table tr td {
   display: none !important;
 }
 
-@media (max-width: 760px) {
-  .loadingScreen img{
-    height: 300px;
-  }
-
-  .onePokemon {
-    height: 130px;
-    width: 227.5px;
-    margin: 7px;
-    background-position: -120px -120px;
-  }
-
-  .onePokemon h2 {
-    margin-left: 15px;
-    margin-top: 15px;
-    font-size: 20px;
-  }
-
-  .right span {
-    margin-right: 20px;
-    margin-top: 5px;
-    font-size: 22px;
-  }
-
-  .onePokemon img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .pokemonType {
-    margin-left: 15px;
-    margin-bottom: 10px;
-    padding: 2px 8px 2px 8px;
-    border-radius: 11.5px;
-    font-size: 14px;
-  }
-
-  .header {
-    height: 100px;
-  }
-
-  .header h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 35px;
-  }
-
-  .header h1 img {
-    height: 22px;
-  }
-
-  .headerRight {
-    height: 100px;
-  }
-}
-
-@media (max-width: 500px) {
-  .loadingScreen img{
-    height: 200px;
-  }
-
-  .onePokemon {
-    height: 85.71px;
-    width: 150px;
-    margin: 5px;
-    background-position: -80px -80px;
-    border-radius: 15px;
-  }
-
-  .onePokemon h2 {
-    margin-left: 7px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 14px;
-  }
-
-  .right span {
-    margin-right: 15px;
-    font-size: 14px;
-  }
-
-  .onePokemon img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .pokemonType {
-    margin-left: 10px;
-    margin-bottom: 5px;
-    padding: 1px 4px 1px 4px;
-    border-radius: 7.5px;
-    font-size: 10px;
-  }
-
-  .header {
-    height: 60px;
-  }
-
-  .header input {
-    margin-left: 10px;
-    font-size: 14px;
-    width: 46px;
-  }
-
-  .header h1 {
-    font-size: 25px;
-  }
-
-  .header h1 img {
-    height: 16px;
-  }
-
-  .headerRight {
-    height: 60px;
-    margin-right: 10px;
-    width: 50px;
-  }
-
-  .headerHeart {
-    height: 30px;
-    top: calc(50% - 15px);
-  }
-
-  .headerRefresh {
-    height: 15px;
-    right: 7px;
-    top: 22px;
-  }
-
-  .buttons {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 220px;
-  }
-
-  .buttons button {
-    height: 30px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 414px) {
-  .loadingScreen img{
-    height: 200px;
-  }
-
-  #pokedex {
-    height: 100vH;
-    width: 100%;
-    border-radius: 0;
-  }
-
-  .above {
-    border-radius: 0;
-  }
-
-  .below {
-    border-radius: 0;
-  }
-
-  .icons {
-    margin-top: 40px;
-    margin-bottom: 10px;
-  }
-
-  .above h1 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  #pokemonImage {
-    height: 120px;
-    width: 120px;
-    left: calc(50% - 60px);
-    top: -90%;
-  }
-
-  table tr td:nth-child(2) {
-    padding-left: 10px;
-  }
-
-  table {
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-}
-
-
-@media (max-width: 340px) {
-  .loadingScreen img{
-    height: 150px;
-  }
-
-  .onePokemon {
-    height: 57.71px;
-    width: 100px;
-    margin: 2px;
-    background-position: -50px -50px;
-    border-radius: 10px;
-  }
-
-  .onePokemon h2 {
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 9px;
-  }
-
-  .right span {
-    margin-right: 5px;
-    font-size: 9px;
-  }
-
-  .onePokemon img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .pokemonType {
-    margin-left: 5px;
-    margin-bottom: 5px;
-    padding: 1px 3px 1px 3px;
-    border-radius: 7.5px;
-    font-size: 7px;
-  }
-
-  .header {
-    height: 60px;
-  }
-
-  .header input {
-    margin-left: 10px;
-    font-size: 14px;
-    width: 50px;
-  }
-
-  .header h1 {
-    font-size: 20px;
-  }
-
-  .header h1 img {
-    height: 12px;
-  }
-
-  .headerRight {
-    height: 60px;
-    margin-right: 10px;
-    width: 50px;
-  }
-
-  .headerHeart {
-    height: 24px;
-    top: calc(50% - 12px);
-  }
-
-  .headerRefresh {
-    height: 11px;
-    right: 6px;
-    top: 24px;
-  }
-
-  .buttons {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 160px;
-  }
-
-  .buttons button {
-    height: 20px;
-    padding: 2px 7px 2px 7px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 300px) {
-  .loadingScreen img{
-    height: 120px;
-  }
-
-  .tableHeadings {
-    font-size: 12px;
-  }
-
-  table tr td:nth-child(2) {
-    padding-left: 5px;
-  }
+.v-hidden {
+  visibility: hidden;
 }

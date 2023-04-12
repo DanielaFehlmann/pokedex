@@ -1,0 +1,329 @@
+@media (max-width: 760px) {
+  .tooltip {
+    top: 75px;
+  }
+
+  .loadingScreen img{
+    height: 300px;
+  }
+
+  .onePokemon {
+    height: 130px;
+    width: 227.5px;
+    margin: 7px;
+    background-position: -120px -120px;
+  }
+
+  .onePokemon h2 {
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .right span {
+    margin-right: 20px;
+    margin-top: 5px;
+    font-size: 22px;
+  }
+
+  .onePokemon img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .pokemonType {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    padding: 2px 8px 2px 8px;
+    border-radius: 11.5px;
+    font-size: 14px;
+  }
+
+  .header {
+    height: 100px;
+  }
+
+  .header h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 35px;
+  }
+
+  .header h1 img {
+    height: 22px;
+  }
+
+  .headerRight {
+    height: 100px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tooltip {
+    right: 35px;
+    top: 15px;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 7px;
+    min-width: 58px;
+  }
+
+  .loadingScreen img{
+    height: 200px;
+  }
+
+  .onePokemon {
+    height: 85.71px;
+    width: 150px;
+    margin: 5px;
+    background-position: -80px -80px;
+    border-radius: 15px;
+  }
+
+  .onePokemon h2 {
+    margin-left: 7px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  .right span {
+    margin-right: 15px;
+    font-size: 14px;
+  }
+
+  .onePokemon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .pokemonType {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    padding: 1px 4px 1px 4px;
+    border-radius: 7.5px;
+    font-size: 10px;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .header input {
+    margin-left: 10px;
+    font-size: 14px;
+    width: 46px;
+  }
+
+  .header h1 {
+    font-size: 25px;
+  }
+
+  .header h1 img {
+    height: 16px;
+  }
+
+  .headerRight {
+    height: 60px;
+    margin-right: 10px;
+    width: 50px;
+  }
+
+  .headerHeart {
+    height: 30px;
+    top: calc(50% - 15px);
+  }
+
+  .headerRefresh {
+    height: 15px;
+    right: 7px;
+    top: 22px;
+  }
+
+  .buttons {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 220px;
+  }
+
+  .buttons button {
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 414px) {
+  #searchFailed {
+    font-size: 14px;
+  }
+
+  .tooltip {
+    right: 32px;
+    top: 18px;
+    font-size: 10px;
+    padding: 3px;
+    border-radius: 6px;
+    min-width: 48px;
+  }
+
+  .loadingScreen img{
+    height: 200px;
+  }
+
+  #pokedex {
+    height: 100vH;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .above {
+    border-radius: 0;
+  }
+
+  .below {
+    border-radius: 0;
+  }
+
+  .icons {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .above h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #pokemonImage {
+    height: 120px;
+    width: 120px;
+    left: calc(50% - 60px);
+    top: -90%;
+  }
+
+  table tr td:nth-child(2) {
+    padding-left: 10px;
+  }
+
+  table {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+
+@media (max-width: 340px) {
+  #searchFailed {
+    margin: 10px 20px;
+  }
+  .tooltip {
+    right: 26px;
+  }
+
+  .loadingScreen img{
+    height: 150px;
+  }
+
+  .onePokemon {
+    height: 57.71px;
+    width: 100px;
+    margin: 2px;
+    background-position: -50px -50px;
+    border-radius: 10px;
+  }
+
+  .onePokemon h2 {
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 9px;
+  }
+
+  .right span {
+    margin-right: 5px;
+    font-size: 9px;
+  }
+
+  .onePokemon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .pokemonType {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding: 1px 3px 1px 3px;
+    border-radius: 7.5px;
+    font-size: 7px;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .header input {
+    margin-left: 10px;
+    font-size: 14px;
+    width: 50px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header h1 img {
+    height: 12px;
+  }
+
+  .headerRight {
+    height: 60px;
+    margin-right: 10px;
+    width: 50px;
+  }
+
+  .headerHeart {
+    height: 24px;
+    top: calc(50% - 12px);
+  }
+
+  .headerRefresh {
+    height: 11px;
+    right: 6px;
+    top: 24px;
+  }
+
+  .buttons {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 160px;
+  }
+
+  .buttons button {
+    height: 20px;
+    padding: 2px 7px 2px 7px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 300px) {
+  .tooltip {
+    right: 25px;
+    top: 22px;
+    padding: 2px;
+    font-size: 8px;
+    border-radius: 4px;
+    min-width: 39px;
+  }
+
+  .loadingScreen img{
+    height: 120px;
+  }
+
+  .tableHeadings {
+    font-size: 12px;
+  }
+
+  table tr td:nth-child(2) {
+    padding-left: 5px;
+  }
+}

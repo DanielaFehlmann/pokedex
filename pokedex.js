@@ -11,7 +11,7 @@ let hearts = [];
  */
 async function loadPokemon() {
   document.getElementById('loadingScreen').classList.remove('d-none');
-  dNone();
+  document.getElementById('buttonLoadMore').classList.remove('d-none');
   load();
   for (let i = start; i < limit; i++) {
     let url = `https://pokeapi.co/api/v2/pokemon/${i+1}`;
@@ -23,15 +23,6 @@ async function loadPokemon() {
   document.getElementById('loadingScreen').classList.add('d-none');
   start += 20;
   limit += 20;
-}
-
-
-/**
- * function to add and remove "display: none"
- */
-function dNone () {
-  document.getElementById('refresh').classList.add('d-none');
-  document.getElementById('buttonLoadMore').classList.remove('d-none');
 }
 
 
@@ -149,16 +140,21 @@ function changeBgColor (firstType, onePokemon) {
   else if (firstType == 'steel') onePokemon.style.backgroundColor='#B7B7CE';
 }
 
+
 /**
- * function to go back to the pokedex by clicking on the heading
+ * function to reset values when going back to pokedex
  */
 function backToPokedex () {
-  dNone();
   for (let i = 0; i < allPokemons.length; i++) {
     document.getElementById('onePokemon'+i).classList.remove('d-none'); 
   }
+  document.getElementById('search').classList.remove('v-hidden');
+  document.getElementById('buttonLoadMore').classList.remove('d-none');
+  document.getElementById('headerHeart').classList.remove('d-none');
+  document.getElementById('goBack').classList.add('d-none');
+  document.getElementById('searchFailed').classList.add('d-none');
+  document.getElementById('deleteSearch').classList.add('d-none');
+  document.getElementById('search').value = '';
+  document.getElementById('search').disabled = false;
 }
-
-
-
 

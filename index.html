@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleResponsive.css" />
     <script src="pokOpen.js"></script>
     <script src="pokOpenInfo.js"></script>
     <script src="localStorage.js"></script>
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="fonts.css">
   </head>
 
-  <body onload="loadPokemon()" id="body" onclick="resetValue()">
+  <body onload="loadPokemon()" id="body">
 
     <div class="loadingScreen d-none" id="loadingScreen">
       <img src="img/pokeball5.png">
@@ -81,15 +82,26 @@
     <div class="pokedexUnopened">
 
       <div class="header" id="header">
-        <input placeholder="Suche..." id="search" onkeyup="searchPokemon()" onclick="backToPokedex()"/>
-        <h1 onclick="backToPokedex()">P<img src="img/pokeball.png" />kedex</h1>
+        <div class="search">
+          <input placeholder="search..." id="search" onkeyup="searchPokemon()">
+          <img src="img/x.svg" class="deleteSearch d-none" id="deleteSearch" onclick="backToPokedex()">
+        </div>
+        <h1 onclick="backToPokedex()" id="heading">P<img src="img/pokeball.png" />kedex</h1>
         <div class="headerRight">
-          <img src="img/heart-red.png" class="headerHeart" onclick="showFavourites()"/>
-          <img src="img/refresh.svg" id="refresh" class="headerRefresh d-none" onclick="showFavourites()"/>
+          <div id="headerHeart">
+            <img src="img/heart-red.png" class="headerHeart" onclick="showFavourites()"/>
+            <span class="tooltip">favourites</span>
+          </div>
+          <div id="goBack" class="d-none">
+            <img src="img/arrowLeft.svg" class="headerHeart" onclick="backToPokedex()"/>
+            <span class="tooltip">show all</span>
+          </div>
         </div>
       </div>
 
-      <div id="allPokemons" class="allPokemons"></div>
+      <div id="allPokemons" class="allPokemons">
+        <div id="searchFailed" class="d-none"></div>
+      </div>
 
       <div class="button">
         <button id="buttonLoadMore" onclick="loadPokemon()">load more</button>

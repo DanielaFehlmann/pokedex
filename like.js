@@ -1,5 +1,3 @@
-
-
 /**
  * function to like a pokemon
  * 
@@ -15,14 +13,28 @@ function like (i) {
     hearts.splice(index,1);
   }
   save();
+  refreshFavourites();
 }
+
+
+/**
+ * function to refresh the favourites-page when dislike a pokemon
+ */
+function refreshFavourites() {
+  for (let i = 0; i < allPokemons.length; i++) {
+    if (document.getElementById('onePokemon' + i).classList.contains('d-none')) {
+      showFavourites();
+      break;
+    }
+  }
+}
+
 
 /**
  * function to show the liked pokemons
  */
 function showFavourites () {
-  document.getElementById('buttonLoadMore').classList.add('d-none');
-  document.getElementById('refresh').classList.remove('d-none');
+  resetValuesFavourites();
   for (let i = 0; i < allPokemons.length; i++) {
     let index = hearts.indexOf(i);
     document.getElementById('onePokemon'+ i).classList.add('d-none');
@@ -31,4 +43,19 @@ function showFavourites () {
     }
   }
 
+}
+
+
+/**
+ * function to reset values when going to favourite pokemons
+ */
+function resetValuesFavourites() {
+  document.getElementById('search').value = '';
+  document.getElementById('search').disabled = true;
+  document.getElementById('goBack').classList.remove('d-none');
+  document.getElementById('search').classList.add('v-hidden');
+  document.getElementById('deleteSearch').classList.add('d-none');
+  document.getElementById('buttonLoadMore').classList.add('d-none');
+  document.getElementById('headerHeart').classList.add('d-none');
+  document.getElementById('searchFailed').classList.add('d-none');
 }
