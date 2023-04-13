@@ -7,11 +7,11 @@ function searchPokemon() {
     document.getElementById('deleteSearch').classList.remove('d-none');
   } else {
     document.getElementById('deleteSearch').classList.add('d-none');
-    document.getElementById('buttonLoadMore').classList.remove('d-none');
   }
   search = search.toLowerCase();
   showSearchedPokemon(search);
   document.getElementById('buttonLoadMore').classList.add('d-none');
+  if (search == '') document.getElementById('buttonLoadMore').classList.remove('d-none');
 }
 
 
